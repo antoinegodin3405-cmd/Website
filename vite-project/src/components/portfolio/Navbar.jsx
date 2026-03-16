@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const RESUME_URL = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_69b3988c1915067271bd1a2f/5ace5267d_ResumeAntoineGodin.pdf";
+const RESUME_URL = "https://drive.google.com/file/d/1ulMm7cU8YdGM-SW73Z-aes1EyaiLfGQX/view?usp=sharing";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
