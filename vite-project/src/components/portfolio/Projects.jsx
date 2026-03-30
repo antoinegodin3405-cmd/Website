@@ -42,6 +42,8 @@ const projects = [
     date: "Sep 2022 – Sep 2023",
     description:
       "Executed comprehensive mechatronic upgrades on an Ender 3 system. Integrated a new motherboard, BLTouch probe for automated bed leveling, direct-drive extruder, and a dual Z-axis system. Drastically improved dimensional accuracy and consistency for rapid prototyping complex engineering components.",
+    // Added the shorts video URL here!
+    videos: ["https://youtube.com/shorts/aCPHjXrxw0s?feature=share"],
     tags: ["3D Printing", "Mechatronics", "Firmware", "Hardware"],
   },
 ];

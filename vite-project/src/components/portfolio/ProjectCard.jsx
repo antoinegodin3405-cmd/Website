@@ -2,9 +2,10 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 
 export default function ProjectCard({ project }) {
-  // Extract YouTube video ID and thumbnail from URL
+  // Extract YouTube video ID and thumbnail from URL (Now supports Shorts!)
   const getYouTubeData = (url) => {
-    const match = url?.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+    // Updated regex to catch watch?v=, youtu.be/, shorts/, and embed/
+    const match = url?.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([^&\s?]+)/);
     const id = match ? match[1] : null;
     return id ? {
       id,
