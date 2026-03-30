@@ -4,12 +4,12 @@ import { Badge } from "@/components/ui/badge";
 export default function ProjectCard({ project }) {
   // Extract YouTube video ID and thumbnail from URL (Now supports Shorts!)
   const getYouTubeData = (url) => {
-    // Updated regex to catch watch?v=, youtu.be/, shorts/, and embed/
     const match = url?.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([^&\s?]+)/);
     const id = match ? match[1] : null;
     return id ? {
       id,
-      thumbnail: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+      // Special URL that forces autoplay, mutes it, hides controls, and loops it
+      embedUrl: `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0`,
       link: url
     } : null;
   };
@@ -47,24 +47,40 @@ export default function ProjectCard({ project }) {
     
     return (
       <div className="group relative rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300">
-        {/* Video thumbnails */}
-        <div className={`relative ${videoData.length === 1 ? 'aspect-video' : 'grid grid-cols-1 gap-2 p-2'}`}>
+       {/* Video thumbnails - AUTOPLAYING & CLICKABLE */}
+        <div 
+          className={`relative ${
+            videoData.length === 1 
+              ? 'aspect-video' 
+              : videoData.length === 2
+                ? 'grid grid-cols-1 sm:grid-cols-2 gap-3 p-3'
+                : 'grid grid-cols-1 sm:grid-cols-3 gap-3 p-3'
+          }`}
+        >
           {videoData.map((video, idx) => (
             <a
               key={video.id}
               href={video.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`relative block group/thumb ${videoData.length === 1 ? '' : 'aspect-video'}`}
+              className={`relative block overflow-hidden group/thumb ${
+                videoData.length === 1 
+                  ? 'w-full h-full' 
+                  : 'aspect-[9/16] rounded-xl' 
+              }`}
             >
-              <img
-                src={video.thumbnail}
-                alt={`${project.title} video ${idx + 1}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover/thumb:bg-black/30 transition-colors rounded-lg">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center group-hover/thumb:scale-110 transition-transform">
+              <iframe
+                src={video.embedUrl}
+                title={`${project.title} video ${idx + 1}`}
+                className="w-full h-full absolute top-0 left-0 scale-[1.35]"
+                allow="autoplay; encrypted-media; mute"
+                frameBorder="0"
+                style={{ pointerEvents: 'none' }}
+              ></iframe>
+              
+              {/* Play button overlay that only appears on hover */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover/thumb:bg-black/30 transition-colors z-10">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 group-hover/thumb:scale-110 transition-all shadow-lg">
                   <svg className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
