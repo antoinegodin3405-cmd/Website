@@ -32,29 +32,46 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Your exact color values, left untouched */
+/* Industrial Marine Colorway - Deepened */
 @layer base {
   :root {
-    --background: 220 20% 4%;
+
+    --background: 222 47% 4%;
+
+
     --foreground: 210 20% 92%;
-    --card: 220 18% 7%;
+    
+    /* Slightly lighter than #161921 for cards/popovers to create depth */
+    --card: 224 20% 14%; 
     --card-foreground: 210 20% 92%;
-    --popover: 220 18% 7%;
+    --popover: 224 20% 14%;
     --popover-foreground: 210 20% 92%;
-    --primary: 210 100% 56%;
-    --primary-foreground: 220 20% 4%;
-    --secondary: 220 16% 12%;
-    --secondary-foreground: 210 20% 80%;
-    --muted: 220 16% 12%;
-    --muted-foreground: 215 14% 50%;
-    --accent: 210 100% 56%;
-    --accent-foreground: 220 20% 4%;
+    
+    /* THE FIX: Deep Marine Accent. Hue shifted to 195 to completely kill any purple tint. */
+    --primary: 195 70% 35%; 
+    --primary-foreground: 0 0% 100%;
+    
+    /* Cool, metallic grays for secondary elements */
+    --secondary: 215 25% 15%; 
+    --secondary-foreground: 210 20% 92%;
+    --muted: 215 25% 15%; 
+    --muted-foreground: 215 20% 65%;
+    
+    /* Subdued hover states */
+    --accent: 215 25% 15%; 
+    --accent-foreground: 210 20% 92%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 16% 14%;
-    --input: 220 16% 14%;
-    --ring: 210 100% 56%;
-    --radius: 0.75rem;
+    
+    /* Crisp, visible borders */
+    --border: 215 25% 20%; 
+    --input: 215 25% 20%;
+    
+    /* Focus rings match the new deep marine blue */
+    --ring: 195 70% 35%; 
+    
+    --radius: 0.5rem; 
   }
 }
 

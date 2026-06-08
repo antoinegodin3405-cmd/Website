@@ -51,8 +51,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <p className="text-sm font-mono text-primary tracking-widest uppercase mb-4">Projects</p>
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-12">
           Engineering Experience & Projects
         </h2>

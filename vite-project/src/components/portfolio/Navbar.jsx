@@ -21,14 +21,18 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+      {/* 1. Updated width and padding to match the Hero section */}
+      <div className="w-full max-w-7xl mx-auto flex items-center justify-between px-8 sm:px-12 py-4">
+        
         <a href="#" className="font-bold text-lg tracking-tight">
           A<span className="text-primary">.</span>G
         </a>
 
+        {/* 2. Added Personal Life to the navigation links */}
         <div className="hidden sm:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#about" className="hover:text-foreground transition-colors">About</a>
           <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
+          {/* <a href="#personal-life" className="hover:text-foreground transition-colors">Personal Life</a> */}
           <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
         </div>
 
@@ -38,6 +42,7 @@ export default function Navbar() {
             <span className="hidden sm:inline">Resume</span>
           </a>
         </Button>
+        
       </div>
     </nav>
   );

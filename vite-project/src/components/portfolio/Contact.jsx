@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Linkedin, MessageCircle, Github } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const links = [
@@ -13,51 +13,48 @@ const links = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/antoine-godin-b648a72b6/",
   },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    href: "https://wa.me/12502156033",
-  },
-  {
+  /*{
     icon: Github,
     label: "GitHub",
-    href: "https://github.com/antoinegodin3405-cmd", // Don't forget to update this!
-  }
+    href: "https://github.com/antoinegodin3405-cmd",
+  }*/
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="relative rounded-2xl border border-border bg-card p-10 sm:p-14 text-center overflow-hidden">
-          {/* Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
-
-          <div className="relative z-10">
-            <p className="text-sm font-mono text-primary tracking-widest uppercase mb-4">Connect & Explore</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-              Let's build something.
-            </h2>
-            <p className="text-muted-foreground max-w-lg mx-auto mb-10">
-              Interested in robotics, automation, and embedded systems projects. Feel free to reach out directly, or check out my repositories to see my code.
+    <section id="contact" className="py-24 px-6 w-full">
+      {/* 1. Restored the bounding box to fix the left margin alignment */}
+      <div className="max-w-6xl mx-auto">
+        
+        {/* 2. Flex container to split text (left) and buttons (right) */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+          
+          {/* Left Side: Text Block */}
+          <div className="max-w-xl text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Get in Touch.</h2>
+            <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+              {/* I'm currently based in Kelowna and always open to discussing new hardware projects, embedded systems architecture, or upcoming engineering roles. Check out my GitHub for custom PCB layouts and firmware repositories, or reach out directly via email. */}
+              I'm currently based in Kelowna and always open to discussing new hardware projects, embedded systems architecture, or upcoming engineering roles. Reach out directly via email to connect
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
-              {links.map((link) => (
-                <Button
-                  key={link.label}
-                  asChild
-                  variant="outline"
-                  className="gap-2 border-primary/20 hover:bg-primary/5 w-full sm:w-auto"
-                >
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
-                    <link.icon className="w-4 h-4 text-primary" />
-                    {link.label}
-                  </a>
-                </Button>
-              ))}
-            </div>
           </div>
+
+          {/* Right Side: Uniform Button Column */}
+          <div className="flex flex-col gap-4 w-full md:w-72 shrink-0 mt-2 md:mt-0">
+            {links.map((link) => (
+              <Button
+                key={link.label}
+                asChild
+                variant="outline"
+                className="w-full justify-start gap-3 border-primary/20 hover:bg-primary/5 py-6"
+              >
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  <link.icon className="w-5 h-5 text-primary" />
+                  {link.label}
+                </a>
+              </Button>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
