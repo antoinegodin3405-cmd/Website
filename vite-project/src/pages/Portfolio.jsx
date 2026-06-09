@@ -8,7 +8,7 @@ import Footer from "../components/portfolio/Footer";
 
 // 1. We import the image into the main layout file now
 // (You may need to adjust the ../ depending on where this file is saved)
-import profileImage from "../assets/Antoine_Godin.jpg"; 
+import profileImage from "../assets/Antoine_Godin.JPG"; 
 
 export default function Portfolio() {
   return (
