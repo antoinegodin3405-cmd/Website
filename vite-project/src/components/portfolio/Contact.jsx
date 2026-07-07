@@ -34,7 +34,7 @@ export default function Contact() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Get in Touch.</h2>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
               {/* I'm currently based in Kelowna and always open to discussing new hardware projects, embedded systems architecture, or upcoming engineering roles. Check out my GitHub for custom PCB layouts and firmware repositories, or reach out directly via email. */}
-              I'm currently based in Kelowna and always open to discussing new hardware projects, embedded systems architecture, or upcoming engineering roles. Reach out directly via email to connect
+              I'm currently based in Kelowna and always open to discussing new hardware projects, embedded systems architecture, or upcoming engineering roles. Reach out directly via email to connect.
             </p>
           </div>
 

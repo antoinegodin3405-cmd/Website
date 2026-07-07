@@ -3,6 +3,14 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "Fully Analog PPG Heart Rate Sensor",
+    date: "Jul 2026 – Present",
+    description: "Designing a custom analog frontend to extract raw heart rate signals using optical plethysmography. Focused heavily on clean analog signal processing and filtering without relying on a microcontroller.",
+    image: "/analogPPG/Main.jpg", 
+    pageLink: "/projects/analog-ppg",
+    tags: ["Analog Signal Processing", "LTspice", "Altium Designer", "PCB Design"],
+  },
+  {
     title: "OKMR Hydrofoil Division – Electrical Co-Lead",
     date: "Sep 2024 – Present",
     description:

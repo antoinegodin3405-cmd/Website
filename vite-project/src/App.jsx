@@ -1,3 +1,5 @@
+import AnalogPPG from './pages/AnalogPPG';
+// ... your existing imports
 import { Toaster } from "@/components/ui/toaster"
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
@@ -13,6 +15,8 @@ function App() {
           
           {/* Your actual main portfolio page */}
           <Route path="/Portfolio" element={<Portfolio />} />
+
+          <Route path="/projects/analog-ppg" element={<AnalogPPG />} />
           
           {/* The gutted 404 page we made earlier */}
           <Route path="*" element={<PageNotFound />} />

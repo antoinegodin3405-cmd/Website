@@ -2,8 +2,6 @@ import React from "react";
 
 export default function About() {
   return (
-    // Notice I removed the massive padding and width restrictions here!
-    // It will now inherit its size from the new parent layout we build later.
     <section id="about" className="scroll-mt-24 pt-4 pb-12 w-full">
       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Engineering from the Ground Up.</h2>
       <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
